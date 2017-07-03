@@ -8,8 +8,12 @@ function hey(from='alex',to='mark') {
 
 hey();
 
-ReactDOM.render(<Portfolio>
-					<PortfolioItem img="cake"/>
-					<PortfolioItem img="cabin"/>
-				</Portfolio>
+ReactDOM.render(<div>
+					<Portfolio>
+						<PortfolioItem img="cake"/>
+						<PortfolioItem img="cabin"/>
+					</Portfolio>
+					<About/>
+					<Contact/>
+				</div>
 	,document.getElementById('react-app'));
