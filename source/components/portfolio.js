@@ -1,7 +1,7 @@
 import React from "react";
 import Section from './section';
 
-export class PortfolioItem extends React.Component {
+class PortfolioItem extends React.Component {
 	constructor(props) {
 		super(props);
 
@@ -17,9 +17,9 @@ export class PortfolioItem extends React.Component {
 	}
 
 	render() {
-		var path = `img/portfolio/${this.props.img}.png`;
+		var path = `img/portfolio/${this.props.data.img}.png`;
 		return 	<div onClick={this.onUpdateImageState} className="col-sm-4 portfolio-item">
-			        <a href="#portfolioModal1" className="portfolio-link" data-toggle="modal">
+			        <a href={this.props.data.link} className="portfolio-link" data-toggle="modal">
 			            <div className="caption">
 			                <div className="caption-content">
 			                    <i className="fa fa-search-plus fa-3x"></i>
@@ -33,9 +33,15 @@ export class PortfolioItem extends React.Component {
 
 export default class Portfolio extends React.Component {
 	render(){
+		let children = [];
+		
+		for (let child of this.props.data) {
+			children.push(<PortfolioItem data={child} key={children.length}/>);
+		}
+		
 		return  <Section id="portfolio" title="Portfolio">
 		            <div className="row">
-		            	{this.props.children}
+		            	{children}
 		            </div>
     			</Section>
 	}
