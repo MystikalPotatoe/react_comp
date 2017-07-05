@@ -6,7 +6,7 @@ export default class Contact extends React.Component {
         return     <Section id="contact" title="Contact Me">
             <div className="row">
                 <div className="col-lg-8 col-lg-offset-2">
-                    <form name="sentMessage" id="contactForm" novalidate>
+                    <form name="sentMessage" id="contactForm" noValidate>
                         <div className="row control-group">
                             <div className="form-group col-xs-12 floating-label-form-group controls">
                                 <label>Name</label>
